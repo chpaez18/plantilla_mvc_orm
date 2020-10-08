@@ -1,0 +1,85 @@
+//explicacion de carpetas
+
+
+├──mvc_1/										//carpeta raiz de la aplicación
+|	├──application/							//aqui va todo el codigo propio de la aplicacion
+|		└──Boostrap.php
+|		└──Config.php
+|		└──Controller.php					//controlador principal del cual extenderan todos los controladores
+|		└──Model.php						//modelo principal del cual extenderan todos los modelos
+|		└──Registro.php
+|		└──Request.php
+|		└──View.php							//vista principal del cual extenderan todos las vistas
+|
+|   ├──controllers/									//contiene los controladores
+|	
+|
+|   ├──libs/										//nuestras librerias
+|
+|   ├──models/										//guardamos aca todos nuestros modelos
+|
+|   ├──public/										//se guardan las hojas de estilos, funciones javascript e imagenes
+|		└──css
+|		└──img
+|		└──js
+|
+|   ├──views/										//se guardan las vistas
+|		└──layouts									//contendra nuestros templates
+|			└──default								//template por default
+|				└──css
+|				└──img
+|				└──js
+|				└──footer.php
+|				└──header.php
+|
+
+
+
+
+
+
+
+
+
+
+
+// explicacion archivo .htaccess
+
+//este archivo hace toda la redirección de nuestro sitio, el interpreta todas las urls y se las va a pasar al archivo index.php
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d  //condicion que dice que, para todas las request que no sean de tipo directorio
+RewriteCond %{REQUEST_FILENAME} !-f  //condicion que dice que, para todas las request que no sean de tipo archivo
+RewriteCond %{REQUEST_FILENAME} !-l  //condicion que dice que, para todas las request que no sean de tipo link
+
+//se hace una regla de dirección
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]    //para todas las peticiones que entren al sitio, vamos a redirigirlo a index.php
+
+
+
+//para armar las url usa:
+
+index.php?url=controlador/metodo/parametros(en caso de que los requiera)
+
+-ejemplo:
+localhost/mvc/public/index.php?url=home/index/3
+
+-ejemplo 2:
+localhost/mvc/public/index.php?url=home/contact
+
+
+para instalar el proyecto 
+1)colocar la carpeta prueba_tecnica en la www/ (en caso de usar wamp server) o en htdocs (en caso de usar xamp server)
+2)colocar la carpeta api_prueba_tecnica en la www/ (en caso de usar wamp server) o en htdocs (en caso de usar xamp server)
+3)restaurar el archivo /data/prueba_tecnica.sql en phmyadmin o su gestor de base de datos Mysql
+4.1)modificar el archivo /prueba_tecnica/models/Database.php y establecer la informacion requerida para la conexion a la base de datos
+4.2)modificar el archivo /api_prueba_tecnica/app/models y establecer la informacion requerida para la conexion a la base de datos
+
+por ultimo dirigirse al navegador y colocar la siguiente ruta:
+http://localhost/prueba_tecnica/index.php?url=site/login
+
+datos de acesso:
+user: prueba
+pswd: 123456

@@ -1,0 +1,13 @@
+{
+    "require": {
+        "illuminate/database": "^7.27",
+        "samayo/bulletproof": "4.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+        "Controllers\\": "controllers/",
+        "Models\\": "models/",
+        "Application\\": "application/"
+        }
+    }
+}

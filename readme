@@ -58,28 +58,13 @@ RewriteCond %{REQUEST_FILENAME} !-l  //condicion que dice que, para todas las re
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]    //para todas las peticiones que entren al sitio, vamos a redirigirlo a index.php
 
 
+Ejcutar dentro de la carpeta del proyecto:
+php composer install
 
-//para armar las url usa:
-
-index.php?url=controlador/metodo/parametros(en caso de que los requiera)
-
--ejemplo:
-localhost/mvc/public/index.php?url=home/index/3
-
--ejemplo 2:
-localhost/mvc/public/index.php?url=home/contact
-
-
-para instalar el proyecto 
-1)colocar la carpeta prueba_tecnica en la www/ (en caso de usar wamp server) o en htdocs (en caso de usar xamp server)
-2)colocar la carpeta api_prueba_tecnica en la www/ (en caso de usar wamp server) o en htdocs (en caso de usar xamp server)
-3)restaurar el archivo /data/prueba_tecnica.sql en phmyadmin o su gestor de base de datos Mysql
-4.1)modificar el archivo /prueba_tecnica/models/Database.php y establecer la informacion requerida para la conexion a la base de datos
-4.2)modificar el archivo /api_prueba_tecnica/app/models y establecer la informacion requerida para la conexion a la base de datos
 
 por ultimo dirigirse al navegador y colocar la siguiente ruta:
-http://localhost/prueba_tecnica/index.php?url=site/login
+http://localhost/nombre_proyecto/index.php?url=site/login
 
-datos de acesso:
+datos de acceso:
 user: prueba
 pswd: 123456
